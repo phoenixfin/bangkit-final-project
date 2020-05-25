@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='style.css') }}"
+      rel="stylesheet"
+    />
+    <title>Crop Leaf Disease Recognition</title>
+  </head>
+  <body class="py-4">
+    <div class="container mx-auto px-4 mb-4">
+      <div>
+        <h1 class="text-2xl mb-4 font-semibold text-center text-green-800">
+          Crop leaf disease detection
+        </h1>
+        <p class="text-center">
+          This application detects disease from 12 types of crops. The disease
+          that can be detected is listed in the table.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex sm:flex-row flex-col mx-auto container">
+      <div class="bg-green-100 border-0 rounded flex-1 p-4 mx-4 my-2">
+        <form action="/" method="POST">
+          <label class="block font-semibold mb-4">Upload picture</label>
+          <input type="file" name="file" class="block my-4" />
+          <button
+            type="submit"
+            class="bg-red-600 p-1 my-4 text-white border rounded px-4 font-semibold border-0"
+          >
+            Detect
+          </button>
+        </form>
+      </div>
+
+      <div class="bg-green-100 border-0 rounded flex-initial mx-4 my-2 p-2">
+        <p class="text-center font-semibold text-xl mt-2 mb-4">
+          List of crops and diseases
+        </p>
+        <table class="border-collapse border-2 border-gray-500 mx-auto">
+          <tr>
+            <th class="border border-gray-400 px-4 py-2 text-gray-800">Crop</th>
+            <th class="border border-gray-400 px-4 py-2 text-gray-800">
+              Disease
+            </th>
+          </tr>
+          <tr>
+            <td rowspan="3" class="border border-gray-400 px-4 py-2">Apple</td>
+            <td class="border border-gray-400 px-4 py-2">Cedar apple rust</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">Frogeye spot</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">Scab</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">Blueberry</td>
+            <td class="border border-gray-400 px-4 py-2">-</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">Cherry</td>
+            <td class="border border-gray-400 px-4 py-2">Powdery mildew</td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="border border-gray-400 px-4 py-2">Citrus</td>
+            <td class="border border-gray-400 px-4 py-2">Greening June</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">Greening Oct</td>
+          </tr>
+          <tr>
+            <td rowspan="3" class="border border-gray-400 px-4 py-2">Grape</td>
+            <td class="border border-gray-400 px-4 py-2">
+              Black measles fungus
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">Black rot fungus</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">Leaf blight fungus</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">Peach</td>
+            <td class="border border-gray-400 px-4 py-2">Bacterial spot</td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="border border-gray-400 px-4 py-2">Pepper</td>
+            <td class="border border-gray-400 px-4 py-2">
+              Bacterial spot NREC
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">
+              Bacterial spot JR
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="border border-gray-400 px-4 py-2">Potato</td>
+            <td class="border border-gray-400 px-4 py-2">
+              Early blight fungus
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">
+              Late blight fungus
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">Raspberry</td>
+            <td class="border border-gray-400 px-4 py-2">-</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">Soy</td>
+            <td class="border border-gray-400 px-4 py-2">-</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">Strawberry</td>
+            <td class="border border-gray-400 px-4 py-2">Scorch</td>
+          </tr>
+          <tr>
+            <td rowspan="8" class="border border-gray-400 px-4 py-2">Tomato</td>
+            <td class="border border-gray-400 px-4 py-2">Bacterial spot</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">
+              Early blight fungus
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">
+              Late blight water mold
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">
+              Mold fungus
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">
+              Septoria leaf spot fungus
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">
+              Spider mite damage insect
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">
+              Target spot bacteria
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 px-4 py-2">
+              YLCV virus
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript"></script>
+    </div>
+  </body>
+</html>
